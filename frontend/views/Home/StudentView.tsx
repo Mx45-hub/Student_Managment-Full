@@ -98,38 +98,6 @@ export default function StudentView(){
       );
 
 
-      const studentname = useFormPart(model.StudentName!);
-      const studentsurname = useFormPart(model.Studentsurname!);
-      const course = useFormPart(model.course!);
-
-      useEffect(() => {
-
-
-          studentname.addValidator(
-            new NotEmpty({
-              message: 'Please enter a student name'
-            }));
-
-           studentsurname.addValidator(
-            new NotEmpty({
-              message: 'Please enter a student surname'
-            }));
-
-
-
-
-                        course.addValidator(
-                            new NotEmpty({
-                              message: 'Please enter a student course'
-                            }));
-
-
-
-
-           } ,
-
-           []);
-
 
 
         return (
