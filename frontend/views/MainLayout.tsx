@@ -1,9 +1,12 @@
-import { AppLayout } from '@hilla/react-components/AppLayout.js';
-import { DrawerToggle } from '@hilla/react-components/DrawerToggle.js';
-import Placeholder from 'Frontend/components/placeholder/Placeholder';
+import   { AppLayout } from '@hilla/react-components/AppLayout.js';
+import  { DrawerToggle }  from '@hilla/react-components/DrawerToggle.js';
+import   Placeholder from 'Frontend/components/placeholder/Placeholder';
 import { useRouteMetadata } from 'Frontend/util/routing';
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import React from 'react';
+import { Icon } from '@hilla/react-components/Icon.js';
+import '@vaadin/icons';
 
 const navLinkClasses = ({ isActive }: any) => {
   return `block rounded-m p-s ${isActive ? 'bg-primary-10 text-primary' : 'text-body'}`;
@@ -15,13 +18,16 @@ export default function MainLayout() {
     <AppLayout primarySection="drawer">
       <div slot="drawer" className="flex flex-col justify-between h-full p-m">
         <header className="flex flex-col gap-m">
-          <h1 className="text-l m-0">My App</h1>
+          <h1 className="text-l m-0 ">Student System</h1>
           <nav>
-            <NavLink className={navLinkClasses} to="/">
-              Hello World
+            <NavLink className={navLinkClasses} to="/students">
+              Students
             </NavLink>
-            <NavLink className={navLinkClasses} to="/about">
-              About
+            <NavLink className={navLinkClasses} to="/delete">
+              Delete Students
+            </NavLink>
+            <NavLink className={navLinkClasses} to="/updatestudent">
+              Update Students
             </NavLink>
           </nav>
         </header>

@@ -3,6 +3,10 @@ import { Notification } from '@hilla/react-components/Notification.js';
 import { TextField } from '@hilla/react-components/TextField.js';
 import { HelloWorldService } from 'Frontend/generated/endpoints.js';
 import { useState } from 'react';
+import css from './HelloWorld.module.css';
+
+
+
 
 export default function HelloWorldView() {
   const [name, setName] = useState('');
@@ -10,21 +14,16 @@ export default function HelloWorldView() {
   return (
     <>
       <section className="flex p-m gap-m items-end">
-        <TextField
-          label="Your name"
-          onValueChanged={(e) => {
-            setName(e.detail.value);
-          }}
-        />
-        <Button
-          onClick={async () => {
-            const serverResponse = await HelloWorldService.sayHello(name);
-            Notification.show(serverResponse);
-          }}
-        >
-          Say hello
-        </Button>
+
+        <h1 className="h-xl bg-error-50 border text-center  m-auto">My Student Managment System</h1>
+
       </section>
+
+        <Button theme="primary"  >Primary</Button>
+
+        <a href="https://bobbyhadz.com" target="_blank" rel="noopener noreferrer">
+        <Button theme="primary"  >Primary</Button>
+      </a>
     </>
   );
 }

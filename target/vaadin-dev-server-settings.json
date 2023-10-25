@@ -1,0 +1,17 @@
+{
+  "frontendFolder": "C:/Users/Musa/hilla-start/frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "C:/Users/Musa/hilla-start/frontend/generated/jar-resources",
+  "staticOutput": "C:/Users/Musa/hilla-start/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "C:\\Users\\Musa\\hilla-start\\target\\classes\\META-INF\\VAADIN\\config",
+  "frontendBundleOutput": "C:\\Users\\Musa\\hilla-start\\target\\classes\\META-INF\\VAADIN\\webapp",
+  "devBundleOutput": "C:/Users/Musa/hilla-start/src/main/dev-bundle/webapp",
+  "devBundleStatsOutput": "C:/Users/Musa/hilla-start/src/main/dev-bundle/config",
+  "jarResourcesFolder": "C:/Users/Musa/hilla-start/frontend/generated/jar-resources",
+  "themeName": "hilla-start",
+  "clientServiceWorkerSource": "C:\\Users\\Musa\\hilla-start\\target\\sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}

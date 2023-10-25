@@ -1,0 +1,10 @@
+com\example\application\SystemManagment.class
+com\example\application\repository\StudentRepo.class
+com\example\application\model\Student.class
+com\example\application\model\StudentModel.class
+com\example\application\services\Commandline.class
+com\example\application\services\HelloWorldService.class
+com\example\application\services\package-info.class
+com\example\application\endpoints\StudentEndpoint.class
+com\example\application\services\StudentService.class
+com\example\application\services\StudentCodeGenerate.class

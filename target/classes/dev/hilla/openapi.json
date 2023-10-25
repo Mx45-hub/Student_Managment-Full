@@ -1,0 +1,503 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Hilla Application",
+    "version" : "1.0.0"
+  },
+  "servers" : [
+    {
+      "url" : "http://localhost:8080/connect",
+      "description" : "Hilla Backend"
+    }
+  ],
+  "tags" : [
+    {
+      "name" : "HelloWorldService",
+      "x-class-name" : "com.example.application.services.HelloWorldService"
+    },
+    {
+      "name" : "StudentService",
+      "x-class-name" : "com.example.application.services.StudentService"
+    }
+  ],
+  "paths" : {
+    "/HelloWorldService/sayHello" : {
+      "post" : {
+        "tags" : [
+          "HelloWorldService"
+        ],
+        "operationId" : "HelloWorldService_sayHello_POST",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/StudentService/deletestu" : {
+      "post" : {
+        "tags" : [
+          "StudentService"
+        ],
+        "operationId" : "StudentService_deletestu_POST",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "studentcode" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    },
+    "/StudentService/deletestudent" : {
+      "post" : {
+        "tags" : [
+          "StudentService"
+        ],
+        "operationId" : "StudentService_deletestudent_POST",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "format" : "int64"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    },
+    "/StudentService/equals" : {
+      "post" : {
+        "tags" : [
+          "StudentService"
+        ],
+        "operationId" : "StudentService_equals_POST",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "o" : {
+                    "type" : "object"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/StudentService/find1studentbycode" : {
+      "post" : {
+        "tags" : [
+          "StudentService"
+        ],
+        "operationId" : "StudentService_find1studentbycode_POST",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "code" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "anyOf" : [
+                    {
+                      "$ref" : "#/components/schemas/com.example.application.model.Student"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/StudentService/findAll" : {
+      "post" : {
+        "tags" : [
+          "StudentService"
+        ],
+        "operationId" : "StudentService_findAll_POST",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "anyOf" : [
+                      {
+                        "$ref" : "#/components/schemas/com.example.application.model.Student"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/StudentService/getStudentRepo" : {
+      "post" : {
+        "tags" : [
+          "StudentService"
+        ],
+        "operationId" : "StudentService_getStudentRepo_POST",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "anyOf" : [
+                    {
+                      "$ref" : "#/components/schemas/com.example.application.repository.StudentRepo"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/StudentService/saveStudent" : {
+      "post" : {
+        "tags" : [
+          "StudentService"
+        ],
+        "operationId" : "StudentService_saveStudent_POST",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "StudentName" : {
+                    "type" : "string"
+                  },
+                  "Studentsurname" : {
+                    "type" : "string"
+                  },
+                  "Studentage" : {
+                    "type" : "integer",
+                    "format" : "int32"
+                  },
+                  "grade" : {
+                    "type" : "integer",
+                    "format" : "int32"
+                  },
+                  "availablility" : {
+                    "type" : "boolean"
+                  },
+                  "course" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    },
+    "/StudentService/setStudentRepo" : {
+      "post" : {
+        "tags" : [
+          "StudentService"
+        ],
+        "operationId" : "StudentService_setStudentRepo_POST",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "studentRepo" : {
+                    "anyOf" : [
+                      {
+                        "$ref" : "#/components/schemas/com.example.application.repository.StudentRepo"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    },
+    "/StudentService/studentRepo" : {
+      "post" : {
+        "tags" : [
+          "StudentService"
+        ],
+        "operationId" : "StudentService_studentRepo_POST",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "studentRepo" : {
+                    "anyOf" : [
+                      {
+                        "$ref" : "#/components/schemas/com.example.application.repository.StudentRepo"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "anyOf" : [
+                    {
+                      "$ref" : "#/components/schemas/com.example.application.services.StudentService"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/StudentService/toString" : {
+      "post" : {
+        "tags" : [
+          "StudentService"
+        ],
+        "operationId" : "StudentService_toString_POST",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/StudentService/updatestuden" : {
+      "post" : {
+        "tags" : [
+          "StudentService"
+        ],
+        "operationId" : "StudentService_updatestuden_POST",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "code" : {
+                    "type" : "string"
+                  },
+                  "StudentName" : {
+                    "type" : "string"
+                  },
+                  "Studentsurname" : {
+                    "type" : "string"
+                  },
+                  "Studentage" : {
+                    "type" : "integer",
+                    "format" : "int32"
+                  },
+                  "grade" : {
+                    "type" : "integer",
+                    "format" : "int32"
+                  },
+                  "availablility" : {
+                    "type" : "boolean"
+                  },
+                  "course" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "com.example.application.model.Student" : {
+        "type" : "object",
+        "properties" : {
+          "StudentName" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Studentage" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Studentsurname" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "availablility" : {
+            "type" : "boolean"
+          },
+          "course" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "grade" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64",
+            "nullable" : true
+          },
+          "studentName" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "studentage" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "studentcode" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "studentsurname" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        }
+      },
+      "com.example.application.repository.StudentRepo" : {
+        "type" : "object"
+      },
+      "com.example.application.services.StudentService" : {
+        "type" : "object",
+        "properties" : {
+          "StudentName" : {
+            "type" : "string"
+          },
+          "Studentage" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Studentsurname" : {
+            "type" : "string"
+          },
+          "grade" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "studentRepo" : {
+            "anyOf" : [
+              {
+                "$ref" : "#/components/schemas/com.example.application.repository.StudentRepo"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
