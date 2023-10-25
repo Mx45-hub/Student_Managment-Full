@@ -26,7 +26,6 @@ export default function StudentView(){
     const [students, setStudents] = useState<Student[]>([])
 
     const [isSubmitting, setIsSubmitting] = useState(false);
-
     useEffect(() => {
         StudentService.findAll()
             .then((data) => {
@@ -42,6 +41,7 @@ export default function StudentView(){
                 console.error('Error fetching data:', error);
             });
     }, []);
+
 
 
 
@@ -73,6 +73,7 @@ export default function StudentView(){
     });
 
 
+
     const items = ['Software Engineering', 'Web Development', 'DevOPS', 'Data Engineering'];
 
 
@@ -97,20 +98,12 @@ export default function StudentView(){
       );
 
 
-      const studentcode = useFormPart(model.studentcode);
-      const studentname = useFormPart(model.StudentName);
-      const studentsurname = useFormPart(model.Studentsurname);
-      const studentage = useFormPart(model.Studentage);
-      const grade = useFormPart(model.grade);
-      const availability = useFormPart(model.availablility);
-      const course = useFormPart(model.course);
+      const studentname = useFormPart(model.StudentName!);
+      const studentsurname = useFormPart(model.Studentsurname!);
+      const course = useFormPart(model.course!);
 
       useEffect(() => {
-        studentcode.addValidator(
-          new NotEmpty({
-            message: 'Please enter student code!',
 
-          }));
 
           studentname.addValidator(
             new NotEmpty({
